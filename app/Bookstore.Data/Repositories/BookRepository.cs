@@ -118,6 +118,7 @@ namespace Bookstore.Data.Repositories
 
             if (string.IsNullOrWhiteSpace(book.CoverImageUrl))
             {
+                // CoverImageUrl is mapped to "coverimageurl" via HasColumnName in ApplicationDbContext.OnModelCreating
                 dbContext.Entry(existing).Property(x => x.CoverImageUrl).IsModified = false;
             }
         }
